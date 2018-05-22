@@ -12,3 +12,8 @@ HEALTHCHECK --interval=5s \
 
 # tell docker what port to expose
 EXPOSE 8000
+
+# Ejecutar el helloWorld
+COPY helloworld-0.0.1.jar /home/helloworld-0.0.1.jar
+CMD ["java","-jar","/home/helloworld-0.0.1.jar"]
+EXPOSE 8080
