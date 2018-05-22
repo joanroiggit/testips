@@ -1,20 +1,20 @@
 node {
     def app
 
-    stage('Clone repository') {
+    stage('Clone repository - CLONADO') {
         /* Let's make sure we have the repository cloned to our workspace */
 
         checkout scm
     }
 
-    stage('Build image') {
+    stage('Build image - CONSTRUCION ') {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
-        app = docker.build("getintodevops/hellonode")
+        app = docker.build("engisoftecstests/test")
     }
 
-    stage('Test image') {
+    stage('Test image - PRUEBA ') {
         /* Ideally, we would run a test framework against our image.
          * For this example, we're using a Volkswagen-type approach ;-) */
 
@@ -23,7 +23,7 @@ node {
         }
     }
 
-    stage('Push image') {
+    stage('Push image - SUBIR') {
         /* Finally, we'll push the image with two tags:
          * First, the incremental build number from Jenkins
          * Second, the 'latest' tag.
