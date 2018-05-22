@@ -13,6 +13,10 @@ HEALTHCHECK --interval=5s \
 EXPOSE 8000
 
 ##INSTALL ORACLE JAVA 8
+RUN echo "deb http://archive.ubuntu.com/ubuntu trusty main universe" > /etc/apt/sources.list
+
+RUN apt-get -y update
+
 ENV JAVA_VER 8
 ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
 
