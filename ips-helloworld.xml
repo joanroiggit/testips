@@ -1,0 +1,8 @@
+<service>
+    <id>ips-helloworld</id>
+    <name>IPS Hello World</name>
+    <description>PoC para IPS</description>
+    <executable>java</executable>
+    <arguments>-jar "%BASE%\target\helloworld-0.0.1.jar"</arguments>
+    <logmode>rotate</logmode>
+</service>
