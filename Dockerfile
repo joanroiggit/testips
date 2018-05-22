@@ -1,6 +1,6 @@
 # use a node base image
 # FROM node:7-onbuild
-FROM dockerfile/java:8
+FROM dockerfile/java
 
 # set maintainer
 LABEL maintainer "j.roig@engisoft.com"
