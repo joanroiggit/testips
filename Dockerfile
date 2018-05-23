@@ -1,6 +1,6 @@
 # use a node base image
 # FROM node:7-onbuild
-FROM java:7
+FROM java:8
 
 # set maintainer
 LABEL maintainer "j.roig@engisoft.com"
