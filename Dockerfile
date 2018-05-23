@@ -14,6 +14,6 @@ HEALTHCHECK --interval=5s \
 EXPOSE 8000
 
 # Ejecutar el helloWorld
-COPY helloworld-0.0.1.jar /home/helloworld-0.0.1.jar
-CMD ["java","-jar","/home/helloworld-0.0.1.jar"]
+COPY helloworld-0.0.2.jar /home/helloworld-0.0.2.jar
+CMD ["java","-jar","/home/helloworld-0.0.2.jar"]
 EXPOSE 8080
