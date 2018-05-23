@@ -1,19 +1,13 @@
-# use a node base image
-# FROM node:7-onbuild
+## Imagen docker a utilizar
 FROM java:8
 
-# set maintainer
+## set maintainer
 LABEL maintainer "j.roig@engisoft.com"
+ENV APP_Version "0.0.2"
 
-# set a health check
-HEALTHCHECK --interval=5s \
-            --timeout=5s \
-            CMD curl -f http://127.0.0.1:8000 || exit 1
-
-# tell docker what port to expose
-EXPOSE 8000
-
-# Ejecutar el helloWorld
+## Ejecutar el helloWorld
 COPY helloworld-0.0.2.jar /home/helloworld-0.0.2.jar
 CMD ["java","-jar","/home/helloworld-0.0.2.jar"]
+
+## Publicacion de puertos
 EXPOSE 8080
