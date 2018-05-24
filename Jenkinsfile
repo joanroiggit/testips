@@ -30,7 +30,7 @@ node {
            /* app.push("latest") Subimos con nombre latest*/
         }
     }
-    stage('Resultado final'){
+ /*   stage('Resultado final'){
      node {
            try {
                 sh 'exit 1'
@@ -40,7 +40,7 @@ node {
                 throw any //rethrow exception to prevent the build from proceeding
             } finally {
             step([$class: 'Mailer', notifyEveryUnstableBuild: true, recipients: 'j.roig@engisoft.com', sendToIndividuals: true])
-    }
+    }*/
 }
     }
 }
