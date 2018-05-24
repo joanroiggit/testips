@@ -3,7 +3,7 @@ FROM java:8
 
 ## set maintainer
 LABEL maintainer "j.roig@engisoft.com"
-RUN apt-get update && apt-get -y install cron
+RUN apt-get update && apt-get -y install cron vim
 ENV APP_Version "0.0.2"
 
 # Add crontab file in the cron directory
@@ -11,7 +11,7 @@ ADD ips-crontab /etc/cron.d/ips-cron
 # Give execution rights on the cron job
 RUN chmod 0644 /etc/cron.d/ips-cron
 # Create the log file to be able to run tail
-RUN touch /var/log/cron.log
+RUN touch /home/registroHora.log
 
 ## Ejecutar el helloWorld
 COPY helloworld-0.0.2.jar /home/helloworld-0.0.2.jar
