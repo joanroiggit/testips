@@ -7,7 +7,7 @@ RUN apt-get update && apt-get -y install cron vim
 ENV APP_Version "0.0.2"
 
 # Add crontab file in the cron directory
-ADD ips-crontab /etc/cron.d/ips-cron
+ADD crontab /etc/cron.d/ips-cron
 # Give execution rights on the cron job
 RUN chmod 0644 /etc/cron.d/ips-cron
 # Create the log file to be able to run tail
