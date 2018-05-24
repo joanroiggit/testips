@@ -12,6 +12,8 @@ ADD crontab /etc/cron.d/ips-cron
 RUN chmod 0644 /etc/cron.d/ips-cron
 # Create the log file to be able to run tail
 RUN touch /home/registroHora.log
+RUN touch /var/log/cron.log
+RUN service cron start
 
 ## Ejecutar el helloWorld
 COPY helloworld-0.0.2.jar /home/helloworld-0.0.2.jar
