@@ -5,6 +5,12 @@ node {
         /* Let's make sure we have the repository cloned to our workspace */
         checkout scm
     }
+    stage('Compilar paquete GIT'){
+            steps{
+                sh ''
+            }
+
+    }
 
     stage('Build image - CONSTRUCION ') {
         /* This builds the actual image; synonymous to docker build on the command line */
@@ -33,16 +39,16 @@ node {
     
     }
     stage('Resultado final'){
-     node {
-           try {
+        node {
+            try {
                 sh 'exit 1'
                     currentBuild.result = 'SUCCESS'
             } catch (any) {
                     currentBuild.result = 'FAILURE'
                 throw any //rethrow exception to prevent the build from proceeding
             } finally {
-            step([$class: 'Mailer', notifyEveryUnstableBuild: true, recipients: 'j.roig@engisoft.com', sendToIndividuals: true])
-            }
-        }
+                step([$class: 'Mailer', notifyEveryUnstableBuild: true, recipients: 'j.roig@engisoft.com', sendToIndividuals: true])
+            }   
+        }  
     }
- }
+}
