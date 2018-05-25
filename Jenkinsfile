@@ -35,7 +35,7 @@ node {
             //app.push("${env.BUILD_NUMBER}") /*Subimos con nombre de version*/
             //app.push("latest") /*Subimos con nombre latest*/
         
-        }
+        //}
     
     }
     stage('Resultado final'){
