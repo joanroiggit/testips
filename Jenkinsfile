@@ -12,12 +12,7 @@ node {
     }
 
     stage('Subir paquete a GIT'){
-            
-        git url: "ssh://github.com/joanroiggit/testips.git"
-        sh 'git tag -a tagName -m "Test"'
-        sh 'git merge master'
-    sh 'git commit -am "Merged develop branch to master'
-    sh "git push origin master"
+
     }
 
     stage('Build image - CONSTRUCION ') {
