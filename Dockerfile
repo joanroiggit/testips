@@ -18,10 +18,11 @@ RUN service cron start
 ## Ejecutar el helloWorld
 COPY helloworld-0.0.2.jar /home/helloworld-0.0.2.jar
 RUN touch /home/version002
-COPY /var/jenkins_home/.m2/repository/com/engisoftcloudservices/poc/ips/helloworld/0.0.3/helloworld-0.0.3.jar /home/helloworld-0.0.3.jar
+COPY helloworld-0.0.3.jar /home/helloworld-0.0.3.jar
 RUN touch /home/version003
 CMD ["java","-jar","/home/helloworld-0.0.3.jar"]
 
+/var/jenkins_home/.m2/repository/com/engisoftcloudservices/poc/ips/helloworld/0.0.3/helloworld-0.0.3.jar
 
 ## Publicacion de puertos
 EXPOSE 8080
