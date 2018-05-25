@@ -6,9 +6,9 @@ node {
         checkout scm
     }
     stage('Compilar paquete GIT'){
-            steps{
-                sh ''
-            }
+            
+            sh 'mvn package'
+            
 
     }
 
