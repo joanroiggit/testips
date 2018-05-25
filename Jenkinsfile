@@ -25,13 +25,14 @@ node {
          * First, the incremental build number from Jenkins
          * Second, the 'latest' tag.
          * Pushing multiple tags is cheap, as all the layers are reused. */
-        docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
-            app.push("${env.BUILD_NUMBER}") /*Subimos con nombre de version*/
-            app.push("latest") /*Subimos con nombre latest*/
+        //docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
+            //app.push("${env.BUILD_NUMBER}") /*Subimos con nombre de version*/
+            //app.push("latest") /*Subimos con nombre latest*/
+        
         }
     
     }
- /*   stage('Resultado final'){
+    stage('Resultado final'){
      node {
            try {
                 sh 'exit 1'
@@ -41,7 +42,7 @@ node {
                 throw any //rethrow exception to prevent the build from proceeding
             } finally {
             step([$class: 'Mailer', notifyEveryUnstableBuild: true, recipients: 'j.roig@engisoft.com', sendToIndividuals: true])
+            }
+        }
     }
-    }
-    }*/
  }
