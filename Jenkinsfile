@@ -7,7 +7,7 @@ node {
     }
     stage('Compilar paquete GIT'){
             
-            sh 'mvn package'
+            sh 'mvn -f pom.xml clean install'
             
 
     }
