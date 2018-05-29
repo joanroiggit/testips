@@ -19,8 +19,7 @@ node {
 
     stage('Build image - CONSTRUCCION ') {
         /* This builds the actual image; synonymous to docker build on the command line */
-        sh "chmod 777 /var/run/docker.sock"
-        app = docker.build("engisoftecstests/test")
+         app = docker.build("engisoftecstests/test")
     }
 
     stage('Test image - PRUEBA ') {
