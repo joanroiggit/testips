@@ -17,7 +17,7 @@ RUN service cron start
 
 ## Ejecutar el helloWorld
 COPY helloworld-0.0.4.jar /home/helloworld-0.0.4.jar
-RUN touch /home/version003
+RUN touch /home/version004
 CMD ["java","-jar","/home/helloworld-0.0.4.jar"]
 
 ## Publicacion de puertos
