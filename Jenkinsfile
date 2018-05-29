@@ -11,7 +11,7 @@ node {
            
     }
 
-    stage('Subir paquete a GIT'){
+  /*  stage('Subir paquete a GIT'){
                     sh '''
                         npm --no-git-tag-version version minor
                         git config --global user.name "joanroiggit"
@@ -21,6 +21,7 @@ node {
                      '''
 
     }
+*/
 
     stage('Build image - CONSTRUCCION ') {
         /* This builds the actual image; synonymous to docker build on the command line */
