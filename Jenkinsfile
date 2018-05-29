@@ -12,13 +12,14 @@ node {
     }
 
     stage('Copiar paquete a GIT'){
-                    sh "cp  /var/jenkins_home/workspace/testIPS/target/helloworld-0.0.3.jar  /var/jenkins_home/workspace/testIPS/"
+                    sh "cp  /var/jenkins_home/workspace/testIPS/target/*.jar  /var/jenkins_home/workspace/testIPS/"
 
     }
 
 
     stage('Build image - CONSTRUCCION ') {
         /* This builds the actual image; synonymous to docker build on the command line */
+        sh "chmod 777 /var/run/docker.sock"
         app = docker.build("engisoftecstests/test")
     }
 
