@@ -8,20 +8,16 @@ node {
     stage('Compilar paquete GIT'){
             
             sh 'mvn -f pom.xml clean install'
-           
+                       
     }
 
-  /*  stage('Subir paquete a GIT'){
-                    sh '''
-                        npm --no-git-tag-version version minor
-                        git config --global user.name "joanroiggit"
-                        git config --global user.email j.roig@engisoft.com
-                        git commit -am 'Bumped version number [ci skip]'
-                        git push origin master
-                     '''
+    stage('Copiar paquete a GIT'){
+                    sh 'cp  /var/jenkins_home/workspace/test IPS/target/helloworld-0.0.3.jar  /var/jenkins_home/workspace/test IPS/target/'
+'
+
 
     }
-*/
+
 
     stage('Build image - CONSTRUCCION ') {
         /* This builds the actual image; synonymous to docker build on the command line */
