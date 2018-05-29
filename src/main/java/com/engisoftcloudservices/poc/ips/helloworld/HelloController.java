@@ -13,6 +13,6 @@ public class HelloController {
 
     @RequestMapping("/")
     String hello() {
-        return "Hola Mon Mundial!!!!!";
+        return "Hola Mon (Versió 3.0.0)!!!!!";
     }
 }
