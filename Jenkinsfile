@@ -12,8 +12,7 @@ node {
     }
 
     stage('Subir paquete a GIT'){
-        git checkout master
-        git commit -am "${env.BUILD_NUMBER}"
+        checkout scm GIT_COMMIT
     }
 
     stage('Build image - CONSTRUCION ') {
