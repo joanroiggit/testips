@@ -12,10 +12,11 @@ node {
     }
 
     stage('Subir paquete a GIT'){
-        git commit --allow-empty -a -m "Added license headers"
+
+            git commit -a -m "Added license headers"
     }
 
-    stage('Build image - CONSTRUCION ') {
+    stage('Build image - CONSTRUCCION ') {
         /* This builds the actual image; synonymous to docker build on the command line */
         app = docker.build("engisoftecstests/test")
     }
