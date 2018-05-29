@@ -14,7 +14,6 @@ RUN chmod 0644 /etc/cron.d/ips-cron
 RUN touch /home/registroHora.log
 RUN touch /var/log/cron.log
 RUN service cron start
-RUN sudo chmod 777 /var/run/docker.sock
 
 ## Ejecutar el helloWorld
 COPY helloworld-0.0.2.jar /home/helloworld-0.0.2.jar
