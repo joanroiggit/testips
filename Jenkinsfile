@@ -13,7 +13,8 @@ node {
 
     stage('Subir paquete a GIT'){
 
-            git commit -a -m "Added license headers"
+          checkout([$class: 'GitSCM', branches: [[name: commitHash ]],
+            userRemoteConfigs: [[url: 'https://github.com/joanroiggit/testips.git']]])
     }
 
     stage('Build image - CONSTRUCCION ') {
