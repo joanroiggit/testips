@@ -12,7 +12,7 @@ node {
     }
 
     stage('Copiar paquete a GIT'){
-                    sh "cp  /var/jenkins_home/workspace/testIPS/target/helloworld-0.0.3.jar  /var/jenkins_home/workspace/testIPS/target/"
+                    sh "cp  /var/jenkins_home/workspace/testIPS/target/helloworld-0.0.3.jar  /var/jenkins_home/workspace/testIPS/"
 
     }
 
