@@ -12,7 +12,7 @@ node {
     }
 
     stage('Subir paquete a GIT'){
-        checkout scm GIT_COMMIT
+        git commit --allow-empty -a -m "Added license headers"
     }
 
     stage('Build image - CONSTRUCION ') {
