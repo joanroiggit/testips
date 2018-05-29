@@ -12,9 +12,14 @@ node {
     }
 
     stage('Subir paquete a GIT'){
+                    sh '''
+                        npm --no-git-tag-version version minor
+                        git config --global user.name "joanroiggit"
+                        git config --global user.email j.roig@engisoft.com
+                        git commit -am 'Bumped version number [ci skip]'
+                        git push origin master
+                     '''
 
-          checkout([$class: 'GitSCM', branches: [[name: commitHash ]],
-            userRemoteConfigs: [[url: 'https://github.com/joanroiggit/testips.git']]])
     }
 
     stage('Build image - CONSTRUCCION ') {
